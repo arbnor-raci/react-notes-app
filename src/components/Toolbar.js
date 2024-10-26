@@ -11,7 +11,7 @@ import {
 
 const buttonClassName = "group hover:bg-yellow-400 p-1 rounded";
 const activeClassName = "bg-gray-200";
-const iconClassName = "group-hover:text-white";
+const iconClassName = "group-hover:text-white size-4 sm:size-5 md:size-6";
 
 const buttonConfigs = [
   {
