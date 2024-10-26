@@ -11,8 +11,8 @@ A simple notes application that allows users to create, edit, and delete notes. 
 
 ## Installation
 
-npm install
-npm start
+- npm install
+- npm start
 
 ### Technologies
 
