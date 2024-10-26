@@ -2,6 +2,8 @@
 
 A simple notes application that allows users to create, edit, and delete notes. The application utilizes the Tiptap editor for Markdown and stores notes in local storage.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8591ca56-6c45-4d28-9959-66f54c275265/deploy-status)](https://app.netlify.com/sites/todone-notes/deploys)
+
 ## Features
 
 - **Create Notes**: Users can add new notes.
