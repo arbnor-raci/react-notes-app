@@ -1,10 +1,30 @@
-# Getting Started with Create React App
+# Notes App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple notes application that allows users to create, edit, and delete notes. The application utilizes the Tiptap editor for Markdown and stores notes in local storage.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Create Notes**: Users can add new notes.
+- **Edit Notes**: Users can modify the content and title of existing notes.
+- **Delete Notes**: Users can remove notes.
+- **Responsive Design**: The app works across various screen sizes.
+
+## Installation
+
+npm install
+npm start
+
+### Technologies
+
+React
+Tiptap
+Context API
+Local Storage
+Tailwind CSS
+
+###
+
+This project is licensed under the MIT License.
 
 ### `npm start`
 
