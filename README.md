@@ -16,11 +16,11 @@ npm start
 
 ### Technologies
 
-React
-Tiptap
-Context API
-Local Storage
-Tailwind CSS
+- React
+- Tiptap
+- Context API
+- Local Storage
+- Tailwind CSS
 
 ###
 
