@@ -22,6 +22,10 @@ npm start
 - Local Storage
 - Tailwind CSS
 
+### Screenshot
+<img width="1440" alt="Bildschirmfoto 2024-10-26 um 17 01 53" src="https://github.com/user-attachments/assets/ed1bed60-dc03-45b0-bac1-7864207df3c2">
+
+
 ###
 
 This project is licensed under the MIT License.
