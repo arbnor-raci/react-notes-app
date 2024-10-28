@@ -4,7 +4,7 @@ const NoteListItem = ({ note, onClick, active, relativeDate }) => {
   return (
     <div
       onClick={onClick}
-      className={`px-4 py-4 border-b cursor-pointer ${
+      className={`px-4 py-3 cursor-pointer rounded-md ${
         active && "bg-yellow-300"
       }`}
     >

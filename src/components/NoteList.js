@@ -39,7 +39,7 @@ const NoteList = () => {
   };
 
   return (
-    <div className="w-full overflow-y-scroll" style={{ height: 650 }}>
+    <div className="w-full overflow-y-scroll p-3" style={{ height: 650 }}>
       {renderNotes()}
     </div>
   );
