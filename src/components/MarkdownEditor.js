@@ -11,6 +11,7 @@ import DeleteNoteButton from "./DeleteNoteButton";
 import { getCurrentISOTime } from "../utils/dateUtils";
 
 const generateNoteId = () => Date.now();
+const customEditorClassName = "focus:outline-none";
 
 const MarkdownEditor = () => {
   const { activeNote, updateNote, createNote, deleteNote, selectNote, notes } =
@@ -44,6 +45,11 @@ const MarkdownEditor = () => {
         handleSave();
       }
     },
+    editorProps: {
+      attributes: {
+        class: customEditorClassName,
+      },
+    },
   });
 
   useEffect(() => {
@@ -51,7 +57,7 @@ const MarkdownEditor = () => {
     if (!activeNote) return;
     editor.commands.setContent(activeNote.content);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeNote]);
+  }, [activeNote, editor]);
 
   const handleCreateNewNote = () => {
     const note = createNote({
