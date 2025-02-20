@@ -19,6 +19,7 @@ A simple notes application that allows users to create, edit, and delete notes. 
 ### Technologies
 
 - React
+- TypeScript
 - Tiptap
 - Context API
 - Local Storage
