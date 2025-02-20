@@ -1,3 +1,4 @@
+import React from "react";
 import { Logo, MarkdownEditor, NoteList } from "./components";
 import { NotesProvider } from "./context/NoteContext";
 

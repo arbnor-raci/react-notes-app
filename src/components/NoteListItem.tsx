@@ -1,6 +1,19 @@
-import PropTypes from "prop-types";
+import React, { FC } from "react";
+import { Note } from "../context/NoteContext";
 
-const NoteListItem = ({ note, onClick, active, relativeDate }) => {
+interface NoteListItemProps {
+  note: Note;
+  onClick: () => void;
+  active: boolean;
+  relativeDate: string;
+}
+
+const NoteListItem: FC<NoteListItemProps> = ({
+  note,
+  onClick,
+  active,
+  relativeDate,
+}) => {
   return (
     <div
       onClick={onClick}
@@ -12,13 +25,6 @@ const NoteListItem = ({ note, onClick, active, relativeDate }) => {
       <p className="text-xs font-medium">{relativeDate}</p>
     </div>
   );
-};
-
-NoteListItem.propTypes = {
-  note: PropTypes.object.isRequired,
-  onClick: PropTypes.func.isRequired,
-  active: PropTypes.bool.isRequired,
-  relativeDate: PropTypes.string.isRequired,
 };
 
 export default NoteListItem;

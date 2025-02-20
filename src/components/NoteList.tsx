@@ -1,5 +1,6 @@
 import { formatRelative } from "date-fns";
 import { de } from "date-fns/locale";
+import React, { FC } from "react";
 
 import useNotes from "../hooks/useNotes";
 import NoteListItem from "./NoteListItem";
@@ -12,7 +13,7 @@ const renderEmptyState = () => (
   />
 );
 
-const NoteList = () => {
+const NoteList: FC = () => {
   const { activeNote, notes, selectNote } = useNotes();
 
   if (notes.length === 0) {

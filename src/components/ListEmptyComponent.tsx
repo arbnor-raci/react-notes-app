@@ -1,6 +1,14 @@
-import PropTypes from "prop-types";
+import React from "react";
 
-const ListEmptyComponent = ({ title, description }) => {
+interface ListEmptyComponentProps {
+  title: string;
+  description: string;
+}
+
+const ListEmptyComponent = ({
+  title,
+  description,
+}: ListEmptyComponentProps) => {
   return (
     <div className="flex justify-center items-center pt-8 px-4">
       <div className="text-center">
@@ -24,11 +32,6 @@ const ListEmptyComponent = ({ title, description }) => {
       </div>
     </div>
   );
-};
-
-ListEmptyComponent.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
 };
 
 export default ListEmptyComponent;

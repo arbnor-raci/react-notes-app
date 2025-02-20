@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { format } from "date-fns";
 import { de } from "date-fns/locale";
 import { useEditor, EditorContent } from "@tiptap/react";
@@ -9,19 +9,19 @@ import useNotes from "../hooks/useNotes";
 import CreateNoteButton from "./CreateNoteButton";
 import DeleteNoteButton from "./DeleteNoteButton";
 import { getCurrentISOTime } from "../utils/dateUtils";
+import { generateNoteId, isUndefinedOrNull } from "../utils";
 
-const generateNoteId = () => Date.now();
 const customEditorClassName = "focus:outline-none";
 
 const MarkdownEditor = () => {
-  const { activeNote, updateNote, createNote, deleteNote, selectNote, notes } =
+  const { activeNote, updateNote, createNote, deleteNote, selectNote } =
     useNotes();
 
   const handleSave = () => {
     const note = createNote({
       id: generateNoteId(),
       title: "",
-      content: editor.getHTML(),
+      content: editor?.getHTML(),
       createdAt: getCurrentISOTime(),
       updatedAt: getCurrentISOTime(),
     });
@@ -53,9 +53,12 @@ const MarkdownEditor = () => {
   });
 
   useEffect(() => {
-    editor.commands.focus();
+    editor?.commands.focus();
     if (!activeNote) return;
-    editor.commands.setContent(activeNote.content);
+
+    if (!isUndefinedOrNull(activeNote?.content)) {
+      editor?.commands.setContent(activeNote.content);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeNote, editor]);
 
@@ -69,12 +72,14 @@ const MarkdownEditor = () => {
     });
 
     selectNote(note);
-    editor.commands.focus();
+    editor?.commands.focus();
   };
 
   const handleDelete = () => {
+    if (activeNote === null) return;
+
     deleteNote(activeNote.id);
-    editor.commands.setContent("");
+    editor?.commands.setContent("");
   };
 
   return (
@@ -93,17 +98,16 @@ const MarkdownEditor = () => {
             })}
           </div>
         )}
-        <div className="flex flex-row gap-x-4">
-          {activeNote && (
+        {activeNote && (
+          <div className="flex flex-row gap-x-4">
             <DeleteNoteButton title={"Löschen"} onClick={handleDelete} />
-          )}
-          {notes.length > 0 && (
+
             <CreateNoteButton
               title={"Notiz erstellen"}
               onClick={handleCreateNewNote}
             />
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );

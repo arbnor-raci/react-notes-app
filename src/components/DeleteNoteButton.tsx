@@ -1,6 +1,14 @@
-import PropTypes from "prop-types";
+import React, { FC, MouseEventHandler } from "react";
 
-const DeleteNoteButton = ({ title, onClick }) => {
+interface DeleteNoteButtonProps {
+  title: string;
+  onClick: MouseEventHandler<HTMLButtonElement>;
+}
+
+const DeleteNoteButton: FC<DeleteNoteButtonProps> = ({
+  title,
+  onClick,
+}: DeleteNoteButtonProps) => {
   return (
     <button
       onClick={onClick}
@@ -23,11 +31,6 @@ const DeleteNoteButton = ({ title, onClick }) => {
       </svg>
     </button>
   );
-};
-
-DeleteNoteButton.propTypes = {
-  title: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
 };
 
 export default DeleteNoteButton;

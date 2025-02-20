@@ -1,4 +1,10 @@
-const Heading1Icon = ({ className = "", ...props }) => (
+import React, { FC } from "react";
+
+interface Heading1IconProps {
+  className?: string;
+}
+
+const Heading1Icon: FC<Heading1IconProps> = ({ className = "", ...props }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"

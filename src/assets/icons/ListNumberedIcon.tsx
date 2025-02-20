@@ -1,4 +1,13 @@
-const ListNumberedIcon = ({ className = "", ...props }) => (
+import React, { FC } from "react";
+
+interface ListNumberedIconProps {
+  className?: string;
+}
+
+const ListNumberedIcon: FC<ListNumberedIconProps> = ({
+  className = "",
+  ...props
+}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"

@@ -1,4 +1,13 @@
-const ListBulletIcon = ({ className = "", ...props }) => (
+import React, { FC } from "react";
+
+interface ListBulletIconProps {
+  className?: string;
+}
+
+const ListBulletIcon: FC<ListBulletIconProps> = ({
+  className = "",
+  ...props
+}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"

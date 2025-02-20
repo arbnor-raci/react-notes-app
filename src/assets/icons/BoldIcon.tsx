@@ -1,4 +1,13 @@
-const BoldIcon = ({ className = "", ...props }) => (
+import React, { FC } from "react";
+
+interface BoldIconProps {
+  className?: string;
+}
+
+const BoldIcon: FC<BoldIconProps> = ({
+  className = "",
+  ...props
+}: BoldIconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"

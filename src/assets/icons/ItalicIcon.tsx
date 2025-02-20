@@ -1,4 +1,10 @@
-const ItalicIcon = ({ className = "", ...props }) => (
+import React, { FC } from "react";
+
+interface ItalicIconProps {
+  className?: string;
+}
+
+const ItalicIcon: FC<ItalicIconProps> = ({ className = "", ...props }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"

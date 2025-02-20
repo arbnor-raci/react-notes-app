@@ -1,6 +1,14 @@
-import PropTypes from "prop-types";
+import React, { FC, MouseEventHandler } from "react";
 
-const CreateNoteButton = ({ title, onClick }) => {
+interface CreateNoteButtonProps {
+  title: string;
+  onClick: MouseEventHandler<HTMLButtonElement>;
+}
+
+const CreateNoteButton: FC<CreateNoteButtonProps> = ({
+  title,
+  onClick,
+}: CreateNoteButtonProps) => {
   return (
     <button
       title={title}
@@ -25,11 +33,6 @@ const CreateNoteButton = ({ title, onClick }) => {
       </svg>
     </button>
   );
-};
-
-CreateNoteButton.propTypes = {
-  title: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
 };
 
 export default CreateNoteButton;
