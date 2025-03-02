@@ -43,8 +43,6 @@ export const NotesProvider: FC<NotesProviderProps> = ({ children }) => {
     savedNotes.length > 0 ? savedNotes[0] : null
   );
 
-  console.log({ notes, activeNote });
-
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes]);
@@ -56,7 +54,6 @@ export const NotesProvider: FC<NotesProviderProps> = ({ children }) => {
 
   const deleteNote = (noteId: number) => {
     setNotes((prevNotes) => prevNotes.filter((note) => note.id !== noteId));
-    // Setze die aktive Notiz zurück, falls sie gelöscht wurde
 
     if (activeNote && activeNote.id === noteId) {
       setActiveNote(null);
