@@ -1,14 +1,16 @@
-import React, { createContext, useState, useEffect, FC } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import { loadNotes } from "../utils";
 
-export const NotesContext = createContext<{
+type NotesContextType = {
   notes: Note[];
   activeNote: Note | null;
   createNote: (note: Note) => Note;
   deleteNote: (noteId: number) => void;
   updateNote: (updatedNote: Note) => void;
   selectNote: (note: Note) => void;
-}>({
+};
+
+export const NotesContext = createContext<NotesContextType>({
   notes: [],
   activeNote: null,
   createNote: () => ({
@@ -33,11 +35,13 @@ export interface Note {
 
 const savedNotes: Note[] = loadNotes();
 
-interface NotesProviderProps {
+type NotesContextProviderProps = {
   children: React.ReactNode;
-}
+};
 
-export const NotesProvider: FC<NotesProviderProps> = ({ children }) => {
+export default function NotesContextProvider({
+  children,
+}: NotesContextProviderProps) {
   const [notes, setNotes] = useState(savedNotes);
   const [activeNote, setActiveNote] = useState(
     savedNotes.length > 0 ? savedNotes[0] : null
@@ -84,4 +88,4 @@ export const NotesProvider: FC<NotesProviderProps> = ({ children }) => {
       {children}
     </NotesContext.Provider>
   );
-};
+}
