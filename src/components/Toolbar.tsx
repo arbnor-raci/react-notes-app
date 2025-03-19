@@ -84,14 +84,14 @@ const ToolbarButton: FC<ToolbarButtonProps> = ({ onClick, isActive, Icon }) => {
   );
 };
 
-interface ToolbarProps {
+type ToolbarProps = {
   editor: Editor | null;
   className?: string;
-}
+};
 
-const Toolbar: FC<ToolbarProps> = ({ editor, className }) => {
+export default function Toolbar({ editor, className }: ToolbarProps) {
   return (
-    <div
+    <section
       className={`flex items-center space-x-4 p-4 border-b ${className} min-h-20`}
     >
       {buttonConfigs.map(({ icon: Icon, action, isActive, id }) => (
@@ -102,8 +102,6 @@ const Toolbar: FC<ToolbarProps> = ({ editor, className }) => {
           Icon={Icon}
         />
       ))}
-    </div>
+    </section>
   );
-};
-
-export default Toolbar;
+}
